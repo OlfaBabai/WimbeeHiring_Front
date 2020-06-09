@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "WimbeeHiring"
+    }
+  },
+  "defaultProject": "WimbeeHiring",
+  "cli": {
+    "analytics": false
+  }
 }

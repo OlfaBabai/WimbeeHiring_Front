@@ -1,0 +1,167 @@
+<head>
+    <title>Home Wimbee</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript">
+      function myfunction()
+      {
+        alert("Demande enregistrée");
+      }
+  
+      function snfn()
+      {
+        if ($("#drop1").value == "Nouveau")
+        {
+          $("#champs1").prop(disabled, false);
+        }
+  
+      }
+    </script>
+  </head>
+  
+  <body class="">
+  <!-- BEGIN HEADER -->
+  <div class="header navbar navbar-inverse ">
+    <!-- BEGIN TOP NAVIGATION BAR -->
+    <div class="navbar-inner">
+      <div class="header-seperation">
+        <ul class="nav pull-left notifcation-center visible-xs visible-sm">
+          <li class="dropdown">
+            <a href="#main-menu" data-webarch="toggle-left-side">
+              <i class="material-icons">menu</i>
+            </a>
+          </li>
+        </ul>
+        <!-- BEGIN LOGO -->
+        <a href="index.html">
+         <img src="assets/img/logoo.png" class="logo" alt="" data-src="assets/img/logoo.png" data-src-retina="assets/img/logo2x.png" width="106" height="21" />
+        </a>
+        <!-- END LOGO -->
+      </div>
+      <!-- END RESPONSIVE MENU TOGGLER -->
+      <div class="header-quick-nav">
+        <!-- BEGIN TOP NAVIGATION MENU -->
+        <div class="pull-left">
+          <ul class="nav quick-section">
+            <li class="quicklinks">
+              <a href="index.html" class="" id="layout-condensed-toggle">
+                <i class="material-icons">menu</i>
+              </a>
+            </li>
+          </ul>
+          <ul class="nav quick-section">
+            <li class="quicklinks  m-r-10">
+              <a href="#" class="">
+                <i class="material-icons">refresh</i>
+              </a>
+            </li>
+            <li class="quicklinks">
+              <a href="#" class="">
+                <i class="material-icons">apps</i>
+              </a>
+            </li>
+            <li class="quicklinks"> <span class="h-seperate"></span></li>
+            <li class="quicklinks">
+              <a href="#" class="" id="my-task-list" data-placement="bottom" data-content='' data-toggle="dropdown" data-original-title="Notifications">
+                <i class="material-icons">notifications_none</i>
+                <span class="badge badge-important bubble-only"></span>
+              </a>
+            </li>
+            <li class="m-r-10 input-prepend inside search-form no-boarder">
+              <span class="add-on"> <i class="material-icons">search</i></span>
+              <input name="" type="text" class="no-boarder " placeholder="Search Dashboard" style="width:250px;">
+            </li>
+          </ul>
+        </div>
+        <div id="notification-list" style="display:none">
+          <div style="width:300px">
+            <div class="notification-messages info">
+              <div class="user-profile">
+                <img src="assets/img/profiles/d.jpg" alt="" data-src="assets/img/profiles/d.jpg" data-src-retina="assets/img/profiles/d2x.jpg" width="35" height="35">
+              </div>
+              <div class="clearfix"></div>
+            </div>
+          </div>
+        </div>
+        <!-- END TOP NAVIGATION MENU -->
+        <!-- BEGIN CHAT TOGGLER -->
+        <div class="pull-right">
+          <div class="chat-toggler sm">
+            <div class="profile-pic">
+              <img src="assets/img/profiles/avatar.webp" alt="" data-src="assets/img/profiles/avatar.webp" data-src-retina="assets/img/profiles/avatar_small2x.jpg" width="35" height="35" />
+              <div class="availability-bubble online"></div>
+            </div>
+          </div>
+          <ul class="nav quick-section ">
+            <li class="quicklinks">
+              <a data-toggle="dropdown" class="dropdown-toggle  pull-right " href="#" id="user-options">
+                <div class="chat-toggler sm">
+                  <div class="profile-pic">
+                    <img src="assets/img/profiles/avatar.webp" alt="" data-src="assets/img/profiles/avatar.webp" data-src-retina="assets/img/profiles/avatar_small2x.jpg" width="35" height="35" />
+                    <div class="availability-bubble online"></div>
+                  </div>
+                </div>
+              </a>
+              <ul class="dropdown-menu  pull-right" role="menu" aria-labelledby="user-options">
+                <li>
+                  <a href="/"> Mon compte</a>
+                </li>
+                <li>
+                  <a href="/">Liste des demandes</a>
+                </li>
+                <li>
+                  <a href="/"> My Inbox&nbsp;&nbsp;
+                    <span class="badge badge-important animated bounceIn">2</span>
+                  </a>
+                </li>
+                <li class="divider"></li>
+                <li>
+                  <a routerLink='/login' routerLinkActive="active"><i class="material-icons">power_settings_new</i>&nbsp;&nbsp;Se déconnecter</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <!-- END CHAT TOGGLER -->
+      </div>
+      <!-- END TOP NAVIGATION MENU -->
+    </div>
+  <!-- END HEADER -->
+  
+  <!-- BEGIN CONTENT -->
+  <div class="page-container row-fluid">
+    <!-- BEGIN SIDEBAR -->
+    <div class="page-sidebar " id="main-menu">
+      <!-- BEGIN MINI-PROFILE -->
+      <div class="page-sidebar-wrapper scrollbar-dynamic" id="main-menu-wrapper">
+        <div class="user-info-wrapper sm">
+          <div class="profile-wrapper sm">
+            <img src="assets/img/profiles/avatar.webp" alt="" data-src="assets/img/profiles/avatar.webp" data-src-retina="assets/img/profiles/avatar2x.jpg" width="69" height="69" />
+            <div class="availability-bubble online"></div>
+          </div>
+          <div class="user-info sm">
+            <div class="username">Manel <span class="semi-bold">Jrad</span></div>
+            <div class="status">VP Exécutif Global Talent Manager</div>
+          </div>
+        </div>
+        <!-- END MINI-PROFILE -->
+        <!-- BEGIN SIDEBAR MENU -->
+        <p class="menu-title sm">M E N U <span class="pull-right"><a routerLink='/home'><i class="material-icons">refresh</i></a></span></p>
+        <ul>
+          <li class=""> <a routerLink='/home' routerLinkActive="active"><i class="material-icons">home</i> <span class="title">Accueil</span> <span class="selected"></span> </a>
+          </li>
+          <li ><a routerLink='/newTicket' routerLinkActive="active"><i class="material-icons" style=" margin-right: 5px;">playlist_add</i> Nouvelle demande </a> </li>
+          <li class="start active"> <a routerLink='/listTicket' routerLinkActive="active"><i class="material-icons" style=" margin-right: 5px;">reorder</i> Liste des demandes</a> </li>
+          <li> <a routerLink='/' routerLinkActive="active"><i class="material-icons" style=" margin-right: 5px;">library_books</i> Mes demandes</a> </li>      
+        </ul>
+        
+        <!-- END SIDEBAR MENU -->
+      </div>
+    </div>
+   
+    <!-- END SIDEBAR -->
+    <!-- BEGIN PAGE CONTAINER-->
+   <div class="page-content">
+       
+   </div>
+        
+         

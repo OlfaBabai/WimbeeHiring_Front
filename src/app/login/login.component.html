@@ -1,0 +1,58 @@
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <title>Login Wimbee</title>
+    <!-- END CORE CSS FRAMEWORK -->
+  </head>
+  <!-- END HEAD -->
+  <!-- BEGIN BODY -->
+  <body class="error-body no-top" >
+    <div class="container" >
+      <div class="row login-container column-seperation" style="padding-top: 28px;">
+        <div class="col-md-5 col-md-offset-1">
+
+          <img src="assets/img/logo.png" style="max-width: 60%; margin-left: 55px; margin-bottom: 30px; margin-top: 5px;">
+          <br>
+          <br>
+          <h2>
+        Bienvenue à Wimbee's Hiring App
+      </h2>
+          <p style="margin-left: 28px;">
+           Veuillez remplir les champs de texte avec vos correctes infos.
+          </p>
+        </div>
+        <div class="col-md-5">
+          <br>
+          <form class="login-form validate" id="login-form" method="get" name="login-form">
+            <div class="row">
+              <div class="form-group col-md-10">
+                <label class="form-label">Identifiant</label>
+                <input class="form-control" id="txtusername" name="txtusername" type="email" required>
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group col-md-10">
+                <label class="form-label">Mot de passe</label> <span class="help"></span>
+                <input class="form-control" id="txtpassword" name="txtpassword" type="password" required>
+              </div>
+            </div>
+            <div class="row">
+              <div class="control-group col-md-10">
+                <div class="checkbox checkbox check-success">
+                  <a href="#">Problème d'identification?</a>&nbsp;&nbsp;
+                  <input id="checkbox1" type="checkbox" value="1">
+                  <label for="checkbox1">Se rappeler de mes infos</label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-10">
+                <a routerLink='/home' routerLinkActive="active"><button class="btn btn-primary btn-cons pull-right"  style="background-color: #9e978e; ">Se connecter</button></a>
+               </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- END CONTAINER -->
