@@ -1,0 +1,35 @@
+.section1{
+    color: #808080;
+    font-weight: bolder;
+    text-align: center;
+    font-size: medium;
+    vertical-align: middle;
+    }
+    
+    .section2{
+    width: 80%;
+    align-items: center;
+    }
+    
+    input {
+        width: 80%;
+        align-self: center;
+    }
+    button {
+        align-self: center;
+        color: aliceblue; 
+        background-color: #3f51b5; 
+        border-color: grey;
+    }
+    button:hover{
+        background-color: aliceblue;
+        color: #3f51b5;
+        border-color: grey;
+    }
+    button:active{
+        background-color:#3f51b5;
+         color: aliceblue;
+        }
+    .centre{
+        margin-left: 40%;
+    }

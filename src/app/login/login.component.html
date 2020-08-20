@@ -15,7 +15,7 @@
           <img src="assets/img/logo.png" style="max-width: 60%; margin-left: 55px; margin-bottom: 30px; margin-top: 5px;">
           <br>
           <br>
-          <h2>
+          <h2 style="margin-left: 48px;">
         Bienvenue à Wimbee's Hiring App
       </h2>
           <p style="margin-left: 28px;">
@@ -24,17 +24,16 @@
         </div>
         <div class="col-md-5">
           <br>
-          <form class="login-form validate" id="login-form" method="get" name="login-form">
             <div class="row">
               <div class="form-group col-md-10">
-                <label class="form-label">Identifiant</label>
-                <input class="form-control" id="txtusername" name="txtusername" type="email" required>
+                <label class="form-label">Email</label>
+                <input class="form-control" [(ngModel)]="email" required  type="email">
               </div>
             </div>
             <div class="row">
               <div class="form-group col-md-10">
                 <label class="form-label">Mot de passe</label> <span class="help"></span>
-                <input class="form-control" id="txtpassword" name="txtpassword" type="password" required>
+                <input class="form-control" [(ngModel)]="pwd" required type="password">
               </div>
             </div>
             <div class="row">
@@ -48,10 +47,9 @@
             </div>
             <div class="row">
               <div class="col-md-10">
-                <a routerLink='/home' routerLinkActive="active"><button class="btn btn-primary btn-cons pull-right"  style="background-color: #9e978e; ">Se connecter</button></a>
+                <button class="btn btn-success" (onclick)="userLogin()" style="background-color: #9e978e; border-color: #808080; ">Se connecter</button>
                </div>
             </div>
-          </form>
         </div>
       </div>
     </div>

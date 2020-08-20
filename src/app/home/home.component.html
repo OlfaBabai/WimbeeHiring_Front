@@ -93,14 +93,9 @@
         </div>
         <ul class="nav quick-section ">
           <li class="quicklinks">
-            <a data-toggle="dropdown" class="dropdown-toggle  pull-right " href="#" id="user-options">
-              <div class="chat-toggler sm">
-                <div class="profile-pic">
-                  <img src="assets/img/profiles/avatar.webp" alt="" data-src="assets/img/profiles/avatar.webp" data-src-retina="assets/img/profiles/avatar_small2x.jpg" width="35" height="35" />
-                  <div class="availability-bubble online"></div>
-                </div>
-              </div>
-            </a>
+                <a data-toggle="dropdown" class="dropdown-toggle  pull-right " href="#" id="user-options">
+                  <i class="material-icons">tune</i>
+                </a>
             <ul class="dropdown-menu  pull-right" role="menu" aria-labelledby="user-options">
               <li>
                 <a href="/"> Mon compte</a>
@@ -137,8 +132,8 @@
           <div class="availability-bubble online"></div>
         </div>
         <div class="user-info sm">
-          <div class="username">Manel <span class="semi-bold">Jrad</span></div>
-          <div class="status">VP Exécutif Global Talent Manager</div>
+          <div class="username" style="font-size: 15px !important;">Manel <span class="semi-bold">Jrad</span></div>
+          <div class="status" style="font-size: 12px !important;">VP Exécutif Global Talent Manager</div>
         </div>
       </div>
     <!-- END MINI-PROFILE -->
@@ -147,16 +142,23 @@
       <p class="menu-title sm">M E N U <span class="pull-right"><a routerLink='/home'><i class="material-icons">refresh</i></a></span></p>
       <ul>
         <li class="start active "> <a routerLink='/home' routerLinkActive="active"><i class="material-icons">home</i> <span class="title">Accueil</span> <span class="selected"></span> </a></li>
+        <li> <a routerLink='/users' routerLinkActive="active"><i class="material-icons" style=" margin-right: 5px;">people</i> Les utilisateurs </a> </li>
         <li><a routerLink='/newTicket' routerLinkActive="active"><i class="material-icons" style=" margin-right: 5px;">playlist_add</i> Nouvelle demande </a> </li>
-        <li> <a routerLink='/listTicket' routerLinkActive="active"><i class="material-icons" style=" margin-right: 5px;">reorder</i> Liste des demandes</a> </li>
-        <li> <a routerLink='/' routerLinkActive="active"><i class="material-icons" style=" margin-right: 5px;">library_books</i> Mes demandes</a> </li>
+        <li> <a routerLink='/listTicket' routerLinkActive="active"><i class="material-icons" style=" margin-right: 5px;">reorder</i> Les demandes</a> </li>
+        <li> <a routerLink='/myTickets' routerLinkActive="active"><i class="material-icons" style=" margin-right: 5px;">library_books</i> Mes demandes</a> </li>
+        <li> <a routerLink='/newCandidature' routerLinkActive="active"><i class="material-icons" style=" margin-right: 5px;">playlist_add</i> Nouvelle candidature</a> </li>
+        <li> <a routerLink='/candidatures' routerLinkActive="active"><i class="material-icons" style=" margin-right: 5px;">reorder</i> Les candidatures</a> </li>
       </ul>     
       <!-- END SIDEBAR MENU -->
     </div>
   </div>
   <!-- END SIDEBAR -->
   <!-- BEGIN PAGE CONTAINER-->
- <div class="page-content">
+ <div class="page-content" style="padding-left: 1.5cm; padding-top: 1.3cm;">
+   <img src="assets/img/wimbeeHome-01.png">
+   <h1 style="padding-top: 1.3cm; text-align: center; padding-right: 0.3cm;">
+     Bienvenu(e), <b style="color: #a34099;"> {{namePerson}} </b>!
+   </h1>
   </div>
       
        

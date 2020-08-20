@@ -1,5 +1,21 @@
 <head>
-    <title>Nouvelle demande</title>
+    <title>Home Wimbee</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript">
+      function myfunction()
+      {
+        alert("Demande enregistrée");
+      }
+  
+      function snfn()
+      {
+        if ($("#drop1").value == "Nouveau")
+        {
+          $("#champs1").prop(disabled, false);
+        }
+  
+      }
+    </script>
   </head>
   
   <body class="">
@@ -149,19 +165,6 @@
             <p>Vous êtes ici </p>
           </li>
           <li><span class="active">Nouvelle demande</span> </li>
-          <li>Etat de traitement: </li> <li>
-            <select [(ngModel)]="stateTraitement"> 
-              <option selected>Nouvelle publication</option>
-              <option>En cours de traitement</option>
-              <option>Recherche en cours</option>
-              <option>CVs proposés</option>
-            </select></li>
-            <li>Etat de validation: </li> <li>
-              <select [(ngModel)]="stateValidation">
-                <option selected>Nouvelle publication</option>
-                <option value="Validé">Validé</option>
-                <option value="Non validé">Non validé</option>
-              </select>   
         </ul>
         <br>
         <mat-horizontal-stepper>
@@ -176,49 +179,48 @@
           </div>
           <br>
           <label class="form-label">Poste</label>
-          <br>
+          <br> <!--(change)="onChange($event)"-->
           <div class="row form-row">
             <div class="col-md-6"> <!--(change)=selectPoste-->
               <select id="drop1" class="Poste" [(ngModel)]="poste"  name="liste1" style="width:100%">
-                <option value="Choix 1">Choix 1</option>
+                <option value="choix 1">Choix 1</option>
                 <option value="Choix 2">Choix 2</option>
                 <option value="Choix 3">Choix 3</option>
                 <option value="Choix 4">Choix 4</option>
-                <option value="Nouveau">Nouveau</option>
+                <option >Nouveau</option>
             </select>
             </div>
             <div class="col-md-6">
-              <input ngif type="text" id="champs1" class="form-control" [(ngModel)]="nvposte" *ngIf="poste=='Nouveau'" >
+              <input type="text" id="champs1" class="form-control" disabled="true">
             </div>
           </div>
           <br>
           <label class="form-label">Rattachement :</label>
           <br>
-          <select [(ngModel)]="departementTicket" style="width:48%">
-            <option value="IT">IT</option>
-            <option value="Projet">Projet</option>
-            <option value="RH">RH</option>
-            <option value="Finance">Finance</option>
+          <select id="source" name="liste1" style="width:48%" [(ngModel)]="departement">
+            <option value="AK">Choix 1</option>
+            <option value="HI">Choix 2</option>
+            <option value="CA">Choix 3</option>
+            <option value="NV">Choix 4</option>
+            <option value="OR">Choix 5</option>
         </select>
         <br>
         <br>
         <div class="row form-row">
           <div class="col-md-6">
             <div class="form-group">
-              <label class="form-label">Compétences techniques (les technologies, les produits..) : <br> <span style="color: grey;">Veuillez les séparer par des "/"</span></label>
-              <!--<div class="row-fluid">
-              <input class="span12 tagsinput" [(ngModel)]="competenceTechnique" type="text" data-role="tagsinput" style="width: 100%;"/>
-            </div>-->
-            <input type="text" [(ngModel)]="competenceTechnique" style="width: 100%;"/>
+              <label class="form-label">Compétences techniques (les technologies, les produits..) :</label>
+              <div class="row-fluid">
+              <input class="span12 tagsinput" type="text" data-role="tagsinput" style="width: 100%;"/>
+            </div>
             </div>
           </div>
           <div class="col-md-6">
             <div class="form-group">
-              <label class="form-label"> Compétences fonctionnelles(les métiers, les méthodologies..) : <br> <span style="color: grey;">Veuillez les séparer par des "/"</span></label>
-              <!--<div class="row-fluid">
-              <input class="span12 tagsinput" [(ngModel)]="competenceTechnique" type="text" data-role="tagsinput" style="width: 100%;"/>
-            </div>-->
-            <input type="text" [(ngModel)]="competenceFonctionnelle" style="width: 100%;"/>
+              <label class="form-label">Compétences fonctionnelles(les métiers, les méthodologies..) :</label>
+              <div class="row-fluid">
+              <input class="span12 tagsinput" type="text" data-role="tagsinput" style="width: 100%;"/>
+              </div>
             </div>
           </div>
         </div>
@@ -226,27 +228,25 @@
         <div class="row form-row">
           <div class="col-md-6">
             <div class="form-group">
-              <label class="form-label"> Soft Skills : <br> <span style="color: grey;">Veuillez les séparer par des "/"</span></label>
-              <!--<div class="row-fluid">
-              <input class="span12 tagsinput" [(ngModel)]="competenceTechnique" type="text" data-role="tagsinput" style="width: 100%;"/>
-            </div>-->
-            <input type="text" [(ngModel)]="softSkills" style="width: 100%;"/>
+              <label class="form-label">Soft Skills :</label>
+              <div class="row-fluid">
+              <input class="span12 tagsinput" type="text" data-role="tagsinput" style="width: 100%;"/>
+            </div>
             </div>
           </div>
           <div class="col-md-6">
         <div class="form-group">
-          <label class="form-label">Certifications requises : <br> <span style="color: grey;">Veuillez les séparer par des "/"</span></label>
-              <!--<div class="row-fluid">
-              <input class="span12 tagsinput" [(ngModel)]="competenceTechnique" type="text" data-role="tagsinput" style="width: 100%;"/>
-            </div>-->
-            <input type="text" [(ngModel)]="certification" style="width: 100%;"/>
+          <label class="form-label">Certifications requises :</label>
+           <div class="row-fluid">
+          <input class="span12 tagsinput" type="text" data-role="tagsinput" style="width: 100%;" />
+        </div>
      </div> 
           </div>
         </div>
         <div class="form-group">
           <label class="form-label">Nombre d'année d'experience :</label>
           <div class="controls">
-            <input type="number" class="form-control auto" [(ngModel)]="nombreAnnee" data-v-max="60" data-v-min="0">
+            <input type="text" class="form-control auto" data-v-max="9999" data-v-min="0">
           </div>
        </div>
         </div>
@@ -261,23 +261,22 @@
             <div class="row">
               <div class="col-md-12">
                 <div class="checkbox check-primary checkbox-circle">
-                  <input id="idProject"  [(ngModel)]="motif1" value="projet" checked type="checkbox">
+                  <input id="idProject" type="checkbox" value="1" onclick="showHideRadio()">
                   <label for="idProject">Sur projet</label>
                 </div>
                       <br>
                       <br>
-                
                     <div class="form-group">
                   <span class="form-label">Nom projet :</span>
                   <div class="controls">
-                    <input type="text" [(ngModel)]="nameProjet" class="form-control">
+                    <input type="text" class="form-control">
                   </div>
                   </div>
 
                   <div class="form-group">
                   <span class="form-label">Nom client :</span>
                   <div class="controls">
-                    <input type="text" [(ngModel)]="nameClient" class="form-control">
+                    <input type="text" class="form-control">
                   </div>
                   </div>
 
@@ -287,7 +286,7 @@
                 <div class="form-group">
                   <span class="form-label">Durée de l'intervention :</span>
                   <div class="row-fluid">
-                  <input type="text" [(ngModel)]="dureeInterProjet" class="form-control" />
+                  <input type="text" class="form-control" />
                 </div>
                 </div>
               </div>
@@ -296,7 +295,7 @@
                 <div class="form-group">
                   <span class="form-label">Charge de l'intervention :</span>
                    <div class="row-fluid">
-                  <input type="text" [(ngModel)]="chargeInterProjet" class="form-control"/>
+                  <input type="text" class="form-control"/>
                 </div>
                 </div>
               </div>
@@ -305,7 +304,7 @@
                 <div class="form-group">
                   <span class="form-label">Lieu de l'intervention prévue :</span>
                   <div class="controls">
-                    <input type="text" [(ngModel)]="lieuInterProjet" class="form-control">
+                    <input type="text" class="form-control">
                   </div>
                </div>
 
@@ -313,9 +312,9 @@
                   <span class="form-label">Confirmation du besoin :</span>
                   <div class="controls">
                     <div class="radio radio-success">
-                      <input id="ey" [(ngModel)]="confirmation" value="Confirmé" type="radio" name="Confirmation">
+                      <input id="ey" type="radio" name="Confirmation">
                       <label for="ey"> Confirmé</label>
-                      <input id="le" [(ngModel)]="confirmation" type="radio" value="Non confirmé" name="Confirmation">
+                      <input id="le" type="radio" name="Confirmation">
                       <label for="le">Non confirmé</label>
                   </div>
                   </div> 
@@ -328,7 +327,7 @@
                     <br>
                       <!-- begin sur opportunité-->
                       <div class="checkbox check-primary checkbox-circle">
-                        <input id="idOpportunity" [(ngModel)]="motif2" value="opportunite" type="checkbox" >
+                        <input id="idOpportunity" type="checkbox" value="1" >
                         <label for="idOpportunity">Sur opportunité</label>
                       </div>
                     <br>
@@ -337,14 +336,14 @@
                     <div class="form-group">
                   <span class="form-label">Nom de l'opportunité :</span>
                   <div class="controls">
-                    <input type="text" [(ngModel)]="nameOpportunite" class="form-control">
+                    <input type="text" class="form-control">
                   </div>
                   </div>
 
                   <div class="form-group">
                   <span class="form-label">Nom prospect :</span>
                   <div class="controls">
-                    <input type="text" [(ngModel)]="nomProspect" class="form-control">
+                    <input type="text" class="form-control">
                   </div>
                   </div>
 
@@ -354,7 +353,7 @@
                 <div class="form-group">
                   <span class="form-label">Durée de l'intervention pressentie :</span>
                   <div class="row-fluid">
-                  <input type="text" [(ngModel)]="dureeInterOpportunite" class="form-control" />
+                  <input type="text" class="form-control" />
                 </div>
                 </div>
               </div>
@@ -363,7 +362,7 @@
                 <div class="form-group">
                   <span class="form-label">Charge de l'intervention pressentie :</span>
                    <div class="row-fluid">
-                  <input type="text" [(ngModel)]="chargeInterOpportunite" class="form-control"/>
+                  <input type="text" class="form-control"/>
                 </div>
                 </div>
               </div>
@@ -372,26 +371,26 @@
             <div class="form-group">
                   <span class="form-label">Lieu de l'intervention pressentie :</span>
                   <div class="controls">
-                    <input type="text" [(ngModel)]="lieuInterOpportunite" class="form-control">
+                    <input type="text" class="form-control">
                   </div>
                   </div>
 
                   <div class="form-group">
                   <span class="form-label">Probabilité de transformation :</span>
                   <div class="controls">
-                    <input type="text" [(ngModel)]="probabilite" class="form-control">
+                    <input type="text" class="form-control">
                   </div>
                   </div>
                   
                   <div class="checkbox check-primary checkbox-circle">
-                    <input id="idStrategy"  type="checkbox" value="Strategique" [(ngModel)]="motif3" >
+                    <input id="idStrategy" type="checkbox" value="1" >
                     <label for="idStrategy">Stratégique :</label>
                         <br> <br> 
                         
                           <div class="form-group">
                     <span class="form-label">Description :</span>
                     <div class="controls">
-                       <textarea id="text-editor" [(ngModel)]="description" placeholder="Description ..." class="form-control" rows="10"></textarea>
+                       <textarea id="text-editor" placeholder="Description ..." class="form-control" rows="10"></textarea>
                     </div>
                     </div>
                       </div>
@@ -409,12 +408,8 @@
               <div class="form-group">
                 <label class="form-label">Date de début souhaitée :</label>
                 <div class="row-fluid">
-                 <!-- <mat-form-field appearance="fill" name="date1">
-                    <mat-label>Choose a date</mat-label>
-                    <input matInput id="date1" [matDatepicker]="picker1" name="date1" [(ngModel)]="dateDebutSouhaite">
-                    <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
-                    <mat-datepicker #picker1></mat-datepicker>
-                  </mat-form-field>--> <input type="text"/>
+                  <input [matDatepicker]="myDatepicker">
+                  <mat-datepicker #myDatepicker></mat-datepicker>
                   </div>
               </div>
             </div>
@@ -423,13 +418,9 @@
               <div class="form-group">
                <label class="form-label">Date de début au plutard :</label>
                <div class="row-fluid">
-               <!-- <mat-form-field appearance="fill" name="date2">
-                  <mat-label>Choose a date</mat-label>
-                  <input matInput [matDatepicker]="picker2" name="date2" [(ngModel)]="dateDebutPlutard">
-                  <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
-                  <mat-datepicker #picker2></mat-datepicker>
-                </mat-form-field> --> <input type="text" />
-              </div>
+                <input [matDatepicker]="myDatepicker">
+               <mat-datepicker #myDatepicker></mat-datepicker>  
+               </div>
              </div>
           </div>
           <div class="row form-row">
@@ -437,7 +428,7 @@
               <br>
           <label class="form-label">Urgence :</label>
           <br>
-              <select id="urgence" [(ngModel)]="urgence" class="" name="urgnece1" style="width:80%">
+              <select id="urgence" class="" name="urgnece1" style="width:80%">
                 <option value="AK">Imminent</option>
                 <option value="HI">Urgent</option>
                 <option value="CA">Pas d'urgence</option>
@@ -447,7 +438,7 @@
               <br>
           <label class="form-label">Importance :</label>
           <br>
-              <select id="importance" [(ngModel)]="importance" class="" name="importance1" style="width:80%">
+              <select id="importance" class="" name="importance1" style="width:80%">
                 <option value="AK">Important</option>
                 <option value="HI">Très important</option>
             </select>
@@ -465,7 +456,7 @@
                 <div class="form-group">
                   <label class="form-label">Salaire budgétisé :</label>
                   <div class="controls">
-                    <input type="number" class="form-control" [(ngModel)]="salaireBud" >
+                    <input type="text" class="form-control" id="date">
                   </div>
                 </div>
               </div>
@@ -473,7 +464,7 @@
                 <div class="form-group">
                   <label class="form-label">Package financier annuel alloué :</label>
                   <div class="controls">
-                    <input type="number" [(ngModel)]="packFinancierAnnuel" class="form-control" >
+                    <input type="text" class="form-control" id="date">
                   </div>
                 </div> 
              </div>
@@ -483,9 +474,9 @@
             <div class="form-group">
               <label class="form-label">Recrutement budgétisé :</label>
               <div class="radio radio-success">
-                  <input id="bud-oui" [(ngModel)]="budgetisation" value="Budgétisé" type="radio" name="budget">
+                  <input id="bud-oui" type="radio" name="budget">
                   <label for="bud-oui">oui</label>
-                  <input id="bud-non" type="radio" [(ngModel)]="budgetisation" value="Non budgétisé" name="budget">
+                  <input id="bud-non" type="radio" name="budget">
                   <label for="bud-non">Non</label>
               </div>
             </div>
@@ -495,12 +486,12 @@
             <div class="form-group">
               <label class="form-label">Autres points à rajouter :</label>
               <div class="controls">
-                <textarea id="text-editor" [(ngModel)]="optionnel" placeholder="Ecrivez votre texte ici ..." class="form-control" rows="10"></textarea>
+                <textarea id="text-editor" placeholder="Ecrivez votre texte ici ..." class="form-control" rows="10"></textarea>
               </div>
             </div>
             <div style="margin-left: 10cm; margin-top: 1cm;">
               <button mat-button matStepperPrevious style="background-color: #808080; color: white; margin-right: 1cm;">Back</button>
-          <button class="btn btn-success" (click)="submit()" style="background-color: #3f51b5; color: white;">Ajouter</button>
+          <button class="btn btn-success" (click)="submit()" style="background-color: #3f51b5; color: white;">Next</button>
         </div>
           </mat-step>
         </mat-horizontal-stepper>
