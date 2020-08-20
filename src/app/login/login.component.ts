@@ -38,14 +38,15 @@ export class LoginComponent implements OnInit {
        TicketsWritten:this.ticketsWritten;
       }
       person=this.homeService.login(person.Email,person.Password);
-     /* if (person==null)
+      if (person==null)
       {
-        
+        this.router.navigate(['login',person]);
       }
       else 
       {
+        
         this.router.navigate(['home',person]);
-      }*/
+      }
 
     /* this.peopleList.forEach(p => {
        if ((person.email==p.Email)&&(person.pwd==p.Password)) {
